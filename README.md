@@ -1,4 +1,5 @@
 # progressbar
+
 ウェブ・アプリケーションにおいて、クライアント側で提出したものを
 ベースにサーバー側にバッチ処理を行うことがよくあると思う。
 
@@ -7,7 +8,7 @@
 このプログラムは php + javascript+ python + shell で
 サーバーの処理をprogress barで表示するプログラムである。
 
-
-php, javascript: 情報提出, 処理結果の表示
-shell: バッチ処理
-python: logfileの監視、複数スクリプトの並列処理
+#各処理の分担
+  1. php, javascript: 情報提出, 処理結果の表示
+  2. shell: バッチ処理
+  3. python: logfileの監視、複数スクリプトの並列処理
