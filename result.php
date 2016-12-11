@@ -11,7 +11,7 @@
 <?php
 
 $isbn = $_POST['isbn']; 
-echo "ISBN: ".$isbn;
+echo "ISBN: ".$isbn."\n";
 
 // Total processes
 $total = 10;
@@ -42,10 +42,20 @@ while (!feof($proc)) {
 		break;
 }
 
-// Tell user that the process is completed
+	// Tell user that the process is completed
     echo '<script language="javascript">
     document.getElementById("information").innerHTML="Process completed!";
     </script>';
+
+	//send mail when the process is over
+	$to = "programer_guanglong@yahoo.co.jp";
+    $subject = "商品変換済み";
+	$message = "Yan さん、\n    商品番号: 「".$isbn."」変換済みです。 \n    宜しくお願い致します。 ";
+	$headers = 'From: from@hoge.co.jp' . "\r\n";
+	if(mail($to, $subject, $message, $headers))
+		echo "通知メール送信済み！";
+	else
+		echo "通知メール送信できませんでした。\n 直接Yanさんに変換済みの商品番号をお知らせください。"
 ?>
 </body>
 </html>
